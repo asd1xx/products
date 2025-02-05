@@ -8,7 +8,7 @@ class Router
 {
     private $routes = [];
 
-    public function dispatch($url)
+    public function dispatch(string $url): void
     {
         $method = Request::getMethod();
         $callback = $this->routes[$method][$url] ?? false;
@@ -20,12 +20,12 @@ class Router
         call_user_func([new $callback[0], $callback[1]]);
     }
 
-    public function get(string $url, $callback)
+    public function get(string $url, array|callable $callback): void
     {
         $this->routes['get'][$url] = $callback;
     }
 
-    public function post(string $url, $callback)
+    public function post(string $url, array|callable $callback): void
     {
         $this->routes['post'][$url] = $callback;
     }

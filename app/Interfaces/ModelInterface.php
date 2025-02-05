@@ -4,7 +4,7 @@ namespace App\Interfaces;
 
 interface ModelInterface
 {
-    public function list();
-    public function create($fields);
-    public function delete($id);
+    public function list(): array;
+    public function create(array $fields): void;
+    public function delete(int $id): void;
 }

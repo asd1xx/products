@@ -14,7 +14,7 @@ class Application
         $this->router = $router;
     }
 
-    public function run()
+    public function run(): void
     {
         $url = Request::getPath();
         $this->router->dispatch($url);

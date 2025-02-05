@@ -13,7 +13,7 @@ class Controller
         $this->product = new Product();
     }
 
-    public function index()
+    public function index(): void
     {
         $products = $this->product->list();
         include 'templates/header.phtml';
@@ -21,7 +21,7 @@ class Controller
         include 'templates/footer.phtml';
     }
 
-    public function storeProduct()
+    public function storeProduct(): void
     {
         $fields = [
             'name' => $_POST['name'],
@@ -31,14 +31,14 @@ class Controller
         header('Location: /');
     }
 
-    public function createProduct()
+    public function createProduct(): void
     {
         include 'templates/header.phtml';
         include 'templates/create.phtml';
         include 'templates/footer.phtml';
     }
 
-    public function deleteProduct()
+    public function deleteProduct(): void
     {
         $this->product->delete($_POST['id']);
         header('Location: /');
