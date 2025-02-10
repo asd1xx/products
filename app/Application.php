@@ -3,7 +3,6 @@
 namespace App;
 
 use App\Router;
-use App\Request;
 
 class Application
 {
@@ -16,7 +15,6 @@ class Application
 
     public function run(): void
     {
-        $url = Request::getPath();
-        $this->router->dispatch($url);
+        $this->router->dispatch();
     }
 }

@@ -8,8 +8,9 @@ class Router
 {
     private $routes = [];
 
-    public function dispatch(string $url): void
+    public function dispatch(): void
     {
+        $url = Request::getPath();
         $method = Request::getMethod();
         $callback = $this->routes[$method][$url] ?? false;
 
