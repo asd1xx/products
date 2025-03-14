@@ -1,4 +1,4 @@
-## Product Catalog
+## [Product Catalog](https://github.com/asd1xx/products)
 
 ### About the project
 
